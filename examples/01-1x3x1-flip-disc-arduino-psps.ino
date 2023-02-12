@@ -2,14 +2,11 @@
  * A simple example of controlling one 3x1 flip-disc display                        *
  * Connection diagram: https://bit.ly/1x3x1-ARD                                     *
  *                                                                                  *
- * Project website: https://bit.ly/3x1DOT-FD                                        *
+ * Project website: https://bit.ly/2x1DOT-FD                                        *
  * Marcin Saj 30 Jan 2023                                                           *
  * https://www.Flipo.io                                                             *
  *                                                                                  *
- * Arduino board with a power module or dedicated controller is required to operate *
- * the display:                                                                     *
- * 1. Arduino board + Pulse Shaper Power Supply - https://bit.ly/PSPS-FD            *
- * 2. Or dedicated controller - https://bit.ly/AC1-FD                               *
+ * Pulse Shaper Power Supply module is required: https://bit.ly/PSPS-FD             *
  *----------------------------------------------------------------------------------*/
 
 /* The library <FlipDisc.h> uses SPI to control flip-disc displays. 
