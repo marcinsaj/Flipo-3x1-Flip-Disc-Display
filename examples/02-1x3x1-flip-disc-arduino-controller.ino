@@ -1,35 +1,20 @@
 /*----------------------------------------------------------------------------------*
- * A simple example of controlling one 3x1 flip-disc display                        *
- * Connection diagram: https://bit.ly/1x3x1-CON                                     *
+ * Flip-disc display controller & 1 x 3x1 display                                   *
+ * Example connection diagram: https://bit.ly/1x3x1-CON                             *
  *                                                                                  *
- * Project website: https://bit.ly/3x1DOT-FD                                        *
- * Marcin Saj 30 Jan 2023                                                           *
- * https://www.Flipo.io                                                             *
+ * The MIT License                                                                  *
+ * Marcin Saj 01 Feb 2023                                                           *
+ * https://github.com/marcinsaj/FlipDisc                                            *
  *                                                                                  *
- * A dedicated controller or any Arduino board with a power module is required      * 
- * to operate the display:                                                          *
- * 1. Dedicated controller - https://bit.ly/AC1-FD                                  *
- * 2. Or any Arduino board + Pulse Shaper Power Supply - https://bit.ly/PSPS-FD     *                       
+ * A dedicated controller is required: https://bit.ly/AC1-FD                        *
  *----------------------------------------------------------------------------------*/
-
-/* The library <FlipDisc.h> uses SPI to control flip-disc displays. 
-The user must remember to connect the display inputs marked: 
-- DIN - data in - to the MOSI (SPI) output of the microcontroller, 
-- CLK - clock - input of the display to the SCK (SPI).
-The displays are connected in series through the built-in connectors, 
-only the first display from the left is connected to the Arduino or a dedicated controller.
- 
-It is very important to connect and declare EN, CH, PL pins. 
-The declaration of DIN (MOSI) and CLK (SCK) is not necessary, 
-because the SPI.h library handles the SPI hardware pins. */
 
 #include <FlipDisc.h>   // https://github.com/marcinsaj/FlipDisc 
 
-// Pin declaration for a dedicated controller
-#define EN_PIN  A7
-#define CH_PIN  A2 
-#define PL_PIN  A3
-
+// Pin declaration for Arduino Controller #1
+#define EN_PIN  A7  // Start & End SPI transfer data
+#define CH_PIN  A2  // Charging PSPS module - turn ON/OFF
+#define PL_PIN  A3  // Release the current pulse - turn ON/OFF
 
 void setup() 
 {
